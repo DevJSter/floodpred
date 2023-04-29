@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Prediction Of Flood</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+    <title>Starter Template - Materialize</title>
+  
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <style>
+      body {
+        /* background-color: #F5F5F5; */
+        text-align: center;
+        font-family: Arial, sans-serif;
+        line-height: 1.5;
+      }
+      .header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+      h1 {
+        color: #5f4e30;
+        font-size: 3rem;
+        /* margin-top: 3rem; */
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+      
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 3rem;
+      }
+      label {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-right: 1rem;
+      }
+      select,
+      input[type="date"],
+      input[type="time"],
+      input[type="number"] {
+        padding: 0.5rem;
+        border: 2px solid #C7C7C7;
+        border-radius: 5px;
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+      }
+      select:focus,
+      input[type="date"]:focus,
+      input[type="time"]:focus,
+      input[type="number"]:focus {
+        outline: none;
+        border-color: #006699;
+      }
+      button[type="submit"] {
+        background-color: #006699;
+        color: #FFFFFF;
+        padding: 1rem 2rem;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        font-size: 1.2rem;
+        transition: background-color 0.2s ease-in-out;
+      }
+      button[type="submit"]:hover {
+        background-color: #003D4D;
+      }
+      .container{
+        background-color: #F0F8FF ;
+      }
+      .page-footer {
+        background-color: orange;
+        padding: 20px;
+      }
+      
+      /* Style for footer text */
+      .page-footer p {
+        color: white;
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 0;
+      }
+      
+      /* Style for footer heading */
+      .page-footer h5 {
+        color: white;
+        font-size: 24px;
+        margin-top: 0;
+      }
+      .header {
+        background-color: #333;
+        overflow: hidden;
+      }
+      
+      /* Style for logo */
+      .logo {
+        float: left;
+        font-size: 28px;
+        color: white;
+        text-align: center;
+        padding: 10px 20px;
+        text-decoration: none;
+      }
+      .header a {
+        float: right;
+        color: white;
+        text-align: center;
+        padding: 12px;
+        text-decoration: none;
+        font-size: 18px;
+        line-height: 25px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <a href="#default" class="logo">Flood Detection System</a>
+      <div class="header-right">
+        <a class="active" href="#home">Home</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+      </div>
+    </div>
+
+    <img class = 'img' src= "rainfall_image.jpeg" alt="Flood image" width="100%"  height="100%">
+
+    <div class="container">
+      
+      <h1>Flood Detection System</h1>
+      
+      <form  method="POST">
+        <div class="form-group">
+          <label for="date" >Date:</label>
+          <input type="date" id="date" name="date" required>
+        </div>
+        <div class="form-group">
+          <label for="month">Month:</label>
+          <select id="month" name="month" required>
+            <option value="" disabled selected hidden>Select a month</option>
+            <option value="1">January</option>
+            <option value="2">February</option>
+            <option value="3">March</option>
+            <option value="4">April</option>
+            <option value="5">May</option>
+            <option value="6">June</option>
+            <option value="7">July</option>
+            <option value="8">August</option>
+            <option value="9">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="time">Time:</label>
+          <input type="time" id="time" name="time" required>
+        </div>
+        <div class="form-group">
+          <label for="rainfall">Rainfall (mm):</label>
+          <input type="number" id="rainfall" name="rainfall" required>
+        </div>
+        <button type="submit">Submit</button>
+        </form>
+    </div>
+  
+   <footer class="page-footer orange">
+     <!-- <div class="container"> -->
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job..</p>
+        </div>
+      
+        <div class="text-right">
+          <p class="mb-0">Copyright © 2023 Flood prevention.
+            <br>All rights reserved.</p>
+        </div>
+  </div>
+
+
+        <!-- <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div> -->
+    <div class="footer-copyright">
+      <div class="container2">
+
+      </div>
+    </div>
+</footer>
+</body>
+</html>

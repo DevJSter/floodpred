@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin-top: 15rem;
+        text-align: center;
+        font-size: 1.7rem;
+      }
+
+      .ot {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- The predicted Flood for {{ date }} at {{ time }} with {{ rainfall }} mm rainfall is:
+
+{{ predicted_level }}
+
+{{ flood }} -->
+    <p>
+      The predicted Flood for at <span class="ot">{{ time }}</span> with
+      <span class="ot">{{ rainfall }}</span> mm rainfall is:
+    </p>
+    <p>
+      With a predicted river level of <span class="ot"> {{ predicted_level }} metres.</span>
+    </p>
+    <p>There is a probability of <span class="ot">{{ state }}</span></p>
+  </body>
+</html>
