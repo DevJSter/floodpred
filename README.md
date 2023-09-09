@@ -1,4 +1,4 @@
-![image](https://github.com/DevJSter/Flood-Detection-System/assets/115056248/5e3f3ee8-5e49-4a79-a3d9-ccd6f61b8c2b)## Flood Detection System
+## Flood Detection System
 ## Some snapshots of the Model
 ![image](https://github.com/DevJSter/Flood-Detection-System/assets/115056248/93866414-0633-461d-891f-e2cca639ae21)
 ![image](https://github.com/DevJSter/Flood-Detection-System/assets/115056248/538ec663-b80c-4973-8547-e2d279cd5f8a)
