@@ -1,18 +1,31 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Prediction Of Flood</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-    <title>Starter Template - Materialize</title>
-  
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1.0"
+    />
     <!-- CSS  -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <link rel="stylesheet" href="style.css">
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="./static/css/materialize.css"
+      type="text/css"
+      rel="stylesheet"
+      media="screen,projection"
+    />
+    <link
+      href="./static/css2/style.css"
+      type="text/css"
+      rel="stylesheet"
+      media="screen,projection"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="header">
@@ -24,18 +37,17 @@
       </div>
     </div>
     <div class="container">
-      
       <h1>Flood Detection System</h1>
-      
-      <form  method="POST" >
+
+      <form method="POST">
         <div class="form-group">
-          <label for="date" >Date:</label>
-          <input type="date" id="date" name="date" required>
+          <label for="date">Date:</label>
+          <input type="date" id="date" name="date" required />
         </div>
         <div class="form-group">
           <label for="month">Month:</label>
           <select id="month" name="month" required>
-            <option value="" disabled selected hidden >Select a month</option>
+            <option value="" disabled selected hidden>Select a month</option>
             <option value="1">January</option>
             <option value="2">February</option>
             <option value="3">March</option>
@@ -52,28 +64,48 @@
         </div>
         <div class="form-group">
           <label for="time">Time:</label>
-          <input type="time" id="time" name="time" required>
+          <input type="time" id="time" name="time" required />
         </div>
         <div class="form-group">
           <label for="rainfall">Rainfall (mm):</label>
-          <input type="number" id="rainfall" name="rainfall" required>
+          <input type="number" id="rainfall" name="rainfall" required />
         </div>
         <button type="submit">Submit</button>
-        </form>
+      </form>
     </div>
-  
-   <footer class="page-footer orange">
+
+    <div class="about">
+      <h1>About here</h1>
+      <p>
+        This is a flood detection system which uses machine learning to predict
+        the flood.
+      </p>
+    </div>
+
+    <div class="contact">
+      <h1>Contact here</h1>
+      <p>
+        This is a flood detection system which uses machine learning to predict
+        the flood.
+      </p>
+    </div>
+
+    <footer class="page-footer orange">
       <div class="row">
         <div class="col l6 s12">
           <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job..</p>
+          <p class="grey-text text-lighten-4">
+            We are a team of college students working on this project like it's
+            our full time job..
+          </p>
         </div>
-      
+
         <div class="text-right">
-          <p class="mb-0">Copyright © 2023 Flood prevention.
-            <br>All rights reserved.</p>
+          <p class="mb-0">
+            Copyright © 2023 Flood prevention. <br />All rights reserved.
+          </p>
         </div>
-    </div>
-</footer>
-</body>
+      </div>
+    </footer>
+  </body>
 </html>
