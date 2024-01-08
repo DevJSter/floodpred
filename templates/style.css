@@ -3,10 +3,13 @@ body {
  text-align: center;
  font-family: Arial, sans-serif;
  line-height: 1.5;
+ background-image: url(rainfall_image.jpg);
 }
 
 .header a {
  float: left;
+ color: black;
+ text-align: center;
  color: black;
  text-align: center;
  padding: 12px;
