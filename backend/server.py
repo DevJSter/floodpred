@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 import pandas as pd
-import pickle ad pi
+import pickle as pi
 app = Flask(__name__)
 
 rf = pickle.load(open('flood_model.pkl', 'rb')) 
