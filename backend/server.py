@@ -1,27 +1,42 @@
-from flask import Flask, render_template, request
-import pandas as pd
+from flask import Flask, request, jsonify
+from flask_cors import CORS
 import pickle as pi
+import pandas as pd
+
 app = Flask(__name__)
+CORS(app)
 
-rf = pickle.load(open('flood_model.pkl', 'rb')) 
+# Load the pre-trained model
+try:
+    with open('./model/rf.pkl', 'rb') as file:
+        rf = pi.load(file)
+except (EOFError, FileNotFoundError) as e:
+    print(f"Error loading the model: {e}")
+    rf = None
 
-def predict_flood(rainfall_amount, day, month):
-    # Assuming you have your model (rf) already defined
-    predicted_level = rf.predict([[float(rainfall_amount), 6, 6, int(day), int(month)]])
-    return 'FLOOD!!' if predicted_level > 1.8 else 'No FLOOD!!'
+def predict_flood(rainfall_amount, hour, day, month, year):
+    if rf:
+        predicted_level = rf.predict([[float(rainfall_amount), int(hour), int(day), int(month), int(year)]])
+        return 'FLOOD!!' if predicted_level > 1.7 else 'No FLOOD!!'
+    return 'Model not loaded properly'
 
-@app.route('/', methods=['POST', 'GET'])
-def get_input():
-    if request.method == 'POST':
-        date = request.form['date']
+@app.route('/floodpred', methods=['POST'])
+def get_prediction():
+    print("Received request:", request.json)
+    data = request.get_json()
+
+    try:
+        date = data['date']
         day, month, year = date.split('-')
-        time = request.form['time']
-        rainfall = request.form['rainfall']
+        time = data['time']
+        hour = time.split(':')[0]
+        rainfall = data['rainfall']
 
-        flood_state = predict_flood(rainfall, day, month)
-        return render_template('result.html', flood_state=flood_state)
-
-    return render_template('input_form.html')
+        flood_state = predict_flood(rainfall, hour, day, month, year)
+        return jsonify({'prediction': flood_state}), 200
+    except Exception as e:
+        print("Error:", e)
+        return jsonify({'error': str(e)}), 400
 
 if __name__ == "__main__":
     app.run(debug=True)
